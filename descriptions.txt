@@ -1,0 +1,23 @@
+-------------------------------------Part 1
+https://youtu.be/MwBYVKYSqdM
+
+1
+install node.js in windows from oficial site
+
+2
+open git bash
+
+3
+install global angular
+npm install -g @angular/cli
+
+4
+ng -- help
+
+-> list commands angular
+
+5
+ng new Angular-Basic
+
+
+08 : 59
