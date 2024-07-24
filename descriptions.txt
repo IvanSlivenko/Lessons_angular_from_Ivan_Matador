@@ -16,8 +16,20 @@ ng -- help
 
 -> list commands angular
 
-5
-ng new Angular-Basic
+5------------------------------------------------------ !!!!!!!!!!!!!!!!!!!!!!!!!
+ng new Angular-Basic --no-standalone --routing 
+
+6
+src-> app-> app.component.html
+ctrl+a
+del
+-------------------------------------------------- Part 2
+https://youtu.be/RXKZqMwqC78
+
+7
+src-> app :
+create folder new
+in folder new create file new.component.ts
 
 
-08 : 59
+11 : 24
