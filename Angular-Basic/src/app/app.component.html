@@ -1,2 +1,49 @@
-<h1> test ({{ title }}) </h1>
-<new-app></new-app>
+
+    <h1 > test ({{ title }}) </h1>
+    <h4 *ngIf="!isParagraphVisible" 
+        (click)="isParagraphVisible = !isParagraphVisible; 
+        show(); 
+        changeIsHeedButtonVisible()"
+    > 
+            Детальніше ... 
+    </h4>
+
+    <p *ngIf="isParagraphVisible" 
+    (click)="isParagraphVisible = !isParagraphVisible; 
+    show(); "
+    >
+        Lorem ipsum dolor sit amet consectetur,<br> 
+        adipisicing elit. Culpa adipisci quidem animi<br> 
+        pariatur molestias. Esse ab modi amet beatae <br>
+        aspernatur consequuntur dolore nihil <br>
+        inventore tempora.
+    </p>
+    <h4 
+        *ngIf="isHeedButtonVisible" 
+        (click)="isParagraphVisible = !isParagraphVisible; 
+        changeIsHeedButtonVisible()"
+    > 
+        Закрити ... 
+    </h4>
+    
+    <ul *ngIf="!isParagraphVisible" >
+        <ng-container>
+
+        </ng-container>
+        <li *ngFor="let item of list; index as id">
+            {{ item + ' with id: '+id }}
+        </li>
+    </ul>
+    <ng-container *ngFor="let user of roles; index as idx">
+        <div [ngSwitch]="user.role">
+            <div *ngSwitchCase="'admin'"> {{ idx+1 }}. Вітаю, ви зайшли, як адмін ({{user.text}}) </div>
+            <div *ngSwitchCase="'user'">{{ idx+1 }}. Вітаю, ви зайшли, як юзер ({{user.text}})</div>
+            <div *ngSwitchCase="'customer'">{{ idx+1}}. Вітаю, ви зайшли, як клієнт ({{user.text}})</div>   
+        </div>
+    </ng-container>
+
+    <ng-container *ngFor="let user of roles; index as idx">
+        <div [ngStyle]="{'color' : user.role === 'admin' ? 'white' : user.role === 'user' ? 'orange' : 'yellow','background':'gray' }">
+            {{ idx+1 }}. Вітаю,
+        </div>
+    </ng-container>

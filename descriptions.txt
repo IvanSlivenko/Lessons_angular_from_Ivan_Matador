@@ -31,5 +31,73 @@ src-> app :
 create folder new
 in folder new create file new.component.ts
 
+8
+ng generate component components/new
+or
+ng g c components/new2
 
-11 : 24
+9
+all files .css rename to .scss
+
+10
+in file
+angular.json find all text == .css and rename this text to .scss
+
+"projects": {
+    "Angular-Basic": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false,
+          "style": "scss"---------------------------------!!!!!!!!!!!!!!!!!!!
+        },
+
+11
+strukture derektive:
+..................................................................................... ngIf
+<p *ngIf="isParagraphVisible">
+    Lorem ipsum dolor sit amet consectetur,<br> 
+    adipisicing elit. Culpa adipisci quidem animi<br> 
+    pariatur molestias. Esse ab modi amet beatae <br>
+    aspernatur consequuntur dolore nihil <br>
+    inventore tempora.
+</p>
+
+12
+event DOM
+<h1 (click)="isParagraphVisible = !isParagraphVisible; show()"> test ({{ title }}) </h1>
+
+............................................................................................... ngFor
+*ngFor=""
+ <ul *ngIf="!isParagraphVisible" >
+        <li *ngFor="let item of list; index as id">
+            {{ item + ' with id: '+id }}
+        </li>
+    </ul>
+
+..................................
+<ng-container>
+            
+</ng-container>    
+
+................................................................................................. ngSwitch->ngSwitchCase
+<ng-container *ngFor="let user of roles; index as idx">
+        <div [ngSwitch]="user.role">
+            <div *ngSwitchCase="'admin'"> {{ idx+1 }}. Вітаю, ви зайшли, як адмін ({{user.text}}) </div>
+            <div *ngSwitchCase="'user'">{{ idx+1 }}. Вітаю, ви зайшли, як юзер ({{user.text}})</div>
+            <div *ngSwitchCase="'customer'">{{ idx+1}}. Вітаю, ви зайшли, як клієнт ({{user.text}})</div>   
+        </div>
+</ng-container>
+
+13
+atribute derektive
+.................................................................................................................ngStyle
+<ng-container *ngFor="let user of roles; index as idx">
+        <div [ngStyle]="{'color' : user.role === 'admin' ? 'green' : user.role === 'user' ? 'blue' : 'red' }">
+            {{ idx+1 }}. Вітаю,
+        </div>
+    </ng-container>
+
+------------------------------------------------------------------------------------------
+
+55 : 08
